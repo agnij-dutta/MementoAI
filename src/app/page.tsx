@@ -1,5 +1,3 @@
-"use client"
-
 import { auth } from "@/auth"
 import { redirect } from "next/navigation"
 import Link from "next/link"
@@ -22,10 +20,10 @@ export default async function Home() {
   }
 
   const navItems = [
-    { name: "Home", url: "/", icon: Sparkles },
-    { name: "Features", url: "#features", icon: Zap },
-    { name: "How it Works", url: "#how-it-works", icon: Brain },
-    { name: "Get Started", url: "/auth/signin", icon: Github },
+    { name: "Home", url: "/", icon: "Sparkles" },
+    { name: "Features", url: "#features", icon: "Zap" },
+    { name: "How it Works", url: "#how-it-works", icon: "Brain" },
+    { name: "Get Started", url: "/auth/signin", icon: "Github" },
   ]
 
   return (
@@ -35,7 +33,7 @@ export default async function Home() {
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl animate-pulse" />
         <div className="absolute top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000" />
         <div className="absolute bottom-40 left-1/2 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl animate-pulse delay-2000" />
-              </div>
+      </div>
 
       {/* Navigation */}
       <NavBar items={navItems} className="z-50" />
@@ -45,7 +43,7 @@ export default async function Home() {
         {/* 3D Background Animation - positioned with higher z-index and opacity */}
         <div className="absolute inset-0 z-0 opacity-70 dark:opacity-50">
           <Scene />
-            </div>
+        </div>
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="mb-8">
@@ -67,7 +65,7 @@ export default async function Home() {
             MementoAI remembers every integration, every pattern, every solution you've ever coded. 
             Turn your GitHub history into an intelligent coding assistant that works with any AI agent.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <div className="relative group">
               <GlowingEffect 
@@ -81,12 +79,12 @@ export default async function Home() {
                 asChild
                 size="lg"
                 className="relative bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-6 rounded-xl font-semibold text-lg shadow-2xl group-hover:shadow-purple-500/25 transition-all duration-300 transform group-hover:scale-105"
-            >
+              >
                 <Link href="/auth/signin">
                   <Github className="w-6 h-6 mr-3" />
                   Start Building Smarter
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
+                </Link>
               </Button>
             </div>
             
@@ -228,13 +226,13 @@ export default async function Home() {
             <div className="text-center lg:text-left">
               <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto lg:mx-0">
                 <Sparkles className="w-8 h-8 text-white" />
-                </div>
+              </div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
                 Smart Prompts
               </h3>
               <p className="text-slate-600 dark:text-slate-300 mb-6">
                 Generate perfect context for Cursor, Windsurf, or any AI agent. Get solutions based on your proven implementations, not generic examples.
-                </p>
+              </p>
               <div className="flex items-center justify-center lg:justify-start space-x-2 text-sm text-slate-500 dark:text-slate-400">
                 <Check className="w-4 h-4 text-green-500" />
                 <span>MCP protocol ready</span>

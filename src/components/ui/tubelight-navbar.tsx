@@ -3,18 +3,25 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { LucideIcon } from "lucide-react"
+import { Sparkles, Zap, Brain, Github } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface NavItem {
   name: string
   url: string
-  icon: LucideIcon
+  icon: string
 }
 
 interface NavBarProps {
   items: NavItem[]
   className?: string
+}
+
+const iconMap = {
+  "Sparkles": Sparkles,
+  "Zap": Zap,
+  "Brain": Brain,
+  "Github": Github,
 }
 
 export function NavBar({ items, className }: NavBarProps) {
@@ -85,7 +92,7 @@ export function NavBar({ items, className }: NavBarProps) {
     >
       <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
-          const Icon = item.icon
+          const Icon = iconMap[item.icon as keyof typeof iconMap] || Sparkles
           const isActive = activeTab === item.name
           const isHovered = hoveredTab === item.name
 
